@@ -1,0 +1,11 @@
+header{
+    display: flex;
+justify-content: space-between; /* espace entre logo, recherche, menu */ 
+align-items: center; /* aligne verticalement */ 
+padding: 10px 20px;
+background-color: aqua;
+height: 60px;
+}
+#EspaceRecherche{
+    width: 300px; /* j'ai augmenté la largeur de la bare de recherche*/
+}
