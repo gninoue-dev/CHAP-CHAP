@@ -1,7 +1,7 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// BASE_URL : '/' en local, '/CHAP_CHAP/' (nom du dépôt) sur GitHub Pages
+// BASE_URL : '/' en local, '/CHAP-CHAP/' (nom du dépôt) sur GitHub Pages
 export default defineConfig({
   base: process.env.CHEMIN_DE_BASE || '/',
   plugins: [react()],

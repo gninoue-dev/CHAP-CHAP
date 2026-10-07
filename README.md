@@ -1,6 +1,8 @@
 # CHAP CHAP
 
 Marketplace ivoirienne multi-vendeurs : des boutiques vérifiées, un seul panier, livré « chap chap ».
+**Démo en ligne : https://gninoue-dev.github.io/CHAP-CHAP/**
+
 Projet réalisé pour démontrer la maîtrise de **React** sur une application complète, avec une vraie base de données.
 
 ## Fonctionnalités

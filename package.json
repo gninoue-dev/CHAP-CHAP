@@ -12,7 +12,7 @@
     "test:watch": "vitest",
     "db:migrer": "node scripts/base.mjs migrer",
     "db:remplir": "node scripts/base.mjs remplir",
-    "deployer": "CHEMIN_DE_BASE=/CHAP_CHAP/ vite build && node scripts/pages-404.mjs"
+    "deployer": "CHEMIN_DE_BASE=/CHAP-CHAP/ vite build && node scripts/pages-404.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
