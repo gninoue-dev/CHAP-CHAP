@@ -1,7 +1,8 @@
 import { supabase, donneesOuErreur } from '../lib/supabase'
 
 export const PRODUITS_PAR_PAGE = 12
-const CHAMPS_PRODUIT = 'id, nom, slug, prix, prix_barre, stock, images, note_moyenne, nombre_avis, ventes, cree_le, est_actif, categorie_id, boutique:boutiques(id, nom, slug, est_verifiee, couleur), categorie:categories(id, nom, slug)'
+const CHAMPS_BASE = 'id, nom, slug, prix, prix_barre, stock, images, note_moyenne, nombre_avis, ventes, cree_le, est_actif, categorie_id, categorie:categories(id, nom, slug)'
+const CHAMPS_PRODUIT = `${CHAMPS_BASE}, boutique:boutiques(id, nom, slug, est_verifiee, couleur)`
 
 export async function listerCategories() {
   return donneesOuErreur(await supabase.from('categories').select('*, produits(count)').order('ordre'))
@@ -40,7 +41,7 @@ export async function listerProduits(filtres = {}) {
 
 export async function obtenirProduit(slug) {
   return donneesOuErreur(await supabase.from('produits')
-    .select(`${CHAMPS_PRODUIT}, description, caracteristiques, boutique:boutiques(id, nom, slug, est_verifiee, couleur, ville, description)`)
+    .select(`${CHAMPS_BASE}, description, caracteristiques, boutique:boutiques(id, nom, slug, est_verifiee, couleur, ville, description)`)
     .eq('slug', slug).single())
 }
 

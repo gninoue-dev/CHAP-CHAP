@@ -29,10 +29,10 @@
 .titreSection { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 800; margin-bottom: 18px; }
 
 .flash { padding: 28px; border-radius: 28px; background: var(--encre); color: #fff; }
-.flash h2, .flash p { color: #fff !important; }
+.flash [class*='carrouselEntete'] h2 { color: #fff; }
 .compteur { display: inline-flex; gap: 6px; align-items: center; font-family: var(--police-titre); font-weight: 800; }
 .compteur span { min-width: 44px; padding: 6px 8px; border-radius: 10px; background: var(--orange); text-align: center; }
-.flash [class*='carrouselEntete'] p { color: #CBD5E1 !important; }
+.flash [class*='carrouselEntete'] p { color: #CBD5E1; }
 
 .boutiques { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
 .carteBoutique { display: flex; gap: 14px; align-items: center; padding: 18px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bordure); text-decoration: none; transition: transform .25s var(--courbe), box-shadow .25s; }
