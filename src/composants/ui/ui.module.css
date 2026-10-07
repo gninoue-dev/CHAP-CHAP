@@ -1,0 +1,112 @@
+/* ---------- Bouton ---------- */
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 10px 20px;
+  font-family: var(--police-titre); font-weight: 600; font-size: .95rem;
+  border: 2px solid transparent; border-radius: 999px;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: transform .2s var(--courbe), background .2s, border-color .2s, color .2s, box-shadow .2s;
+}
+.bouton:active:not(:disabled) { transform: scale(.97); }
+.bouton:disabled { opacity: .55; cursor: not-allowed; }
+.principal { background: var(--orange); color: #fff; box-shadow: 0 10px 24px -12px rgba(255, 107, 0, .9); }
+.principal:hover:not(:disabled) { background: var(--orange-fonce); transform: translateY(-2px); }
+.secondaire { background: var(--surface); color: var(--texte); border-color: var(--bordure); }
+.secondaire:hover:not(:disabled) { border-color: var(--orange); color: var(--orange); }
+.sombre { background: var(--encre); color: #fff; }
+.sombre:hover:not(:disabled) { background: #1E293B; }
+[data-theme='sombre'] .sombre { background: #fff; color: var(--encre); }
+.danger { background: var(--rouge-pale); color: var(--rouge); }
+.danger:hover:not(:disabled) { background: var(--rouge); color: #fff; }
+.fantome { background: transparent; color: var(--texte); }
+.fantome:hover:not(:disabled) { background: var(--surface-2); }
+.petit { min-height: 36px; padding: 6px 14px; font-size: .85rem; }
+.grand { min-height: 54px; padding: 14px 28px; font-size: 1.05rem; }
+.large { width: 100%; }
+.tournant { width: 18px; height: 18px; border: 2.5px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: tourne .7s linear infinite; }
+@keyframes tourne { to { transform: rotate(360deg); } }
+
+/* ---------- Champ de formulaire ---------- */
+.champ { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.libelle { font-weight: 600; font-size: .9rem; }
+.libelle small { color: var(--texte-doux); font-weight: 400; }
+.saisie {
+  width: 100%; min-height: 48px; padding: 10px 14px;
+  border: 1.5px solid var(--bordure); border-radius: var(--rayon-petit);
+  background: var(--surface); outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+textarea.saisie { resize: vertical; min-height: 100px; }
+.saisie:focus { border-color: var(--orange); box-shadow: 0 0 0 4px color-mix(in srgb, var(--orange) 18%, transparent); }
+.invalide .saisie { border-color: var(--rouge); }
+.erreur { margin: 0; color: var(--rouge); font-size: .82rem; font-weight: 600; min-height: 1.1em; }
+.aide { margin: 0; color: var(--texte-doux); font-size: .82rem; }
+
+/* ---------- Étoiles ---------- */
+.etoiles { display: inline-flex; align-items: center; gap: 2px; color: #F59E0B; }
+.etoiles svg { width: var(--taille, 16px); height: var(--taille, 16px); }
+.etoileVide { color: var(--bordure); }
+.etoilesInteractives button { padding: 2px; background: none; border: none; cursor: pointer; color: var(--bordure); transition: transform .15s; }
+.etoilesInteractives button:hover { transform: scale(1.2); }
+.etoilesInteractives button.allumee { color: #F59E0B; }
+
+/* ---------- Prix ---------- */
+.prix { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 4px 8px; }
+.prixActuel { font-family: var(--police-titre); font-weight: 800; color: var(--texte); }
+.prixBarre { color: var(--texte-doux); text-decoration: line-through; font-size: .85em; }
+.remise { padding: 2px 8px; border-radius: 999px; background: var(--rouge-pale); color: var(--rouge); font-weight: 700; font-size: .78em; }
+
+/* ---------- Badge ---------- */
+.badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700; white-space: nowrap; }
+.badge-gris { background: var(--surface-2); color: var(--texte-doux); }
+.badge-orange { background: var(--orange-pale); color: var(--orange-fonce); }
+.badge-vert { background: var(--vert-pale); color: var(--vert); }
+.badge-rouge { background: var(--rouge-pale); color: var(--rouge); }
+.badge-bleu { background: #DBEAFE; color: #1D4ED8; }
+.badge-violet { background: #EDE9FE; color: #6D28D9; }
+[data-theme='sombre'] .badge-orange { color: #FFB27A; }
+[data-theme='sombre'] .badge-bleu { background: #172554; color: #93C5FD; }
+[data-theme='sombre'] .badge-violet { background: #2E1065; color: #C4B5FD; }
+
+/* ---------- Squelettes de chargement ---------- */
+.squelette { border-radius: var(--rayon-petit); background: linear-gradient(90deg, var(--surface-2) 25%, var(--bordure) 50%, var(--surface-2) 75%); background-size: 200% 100%; animation: brille 1.3s infinite; }
+@keyframes brille { to { background-position: -200% 0; } }
+
+/* ---------- États ---------- */
+.etatVide { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 48px 20px; text-align: center; color: var(--texte-doux); }
+.etatVideIcone { width: 72px; height: 72px; display: grid; place-items: center; border-radius: 50%; background: var(--orange-pale); color: var(--orange); }
+.etatVideIcone svg { width: 34px; height: 34px; }
+.etatVide h2 { color: var(--texte); font-size: 1.3rem; }
+.etatVide p { margin: 0; max-width: 420px; }
+.chargementPage { display: grid; place-items: center; min-height: 50vh; }
+.anneau { width: 46px; height: 46px; border-radius: 50%; border: 4px solid var(--orange-pale); border-top-color: var(--orange); animation: tourne .8s linear infinite; }
+
+/* ---------- Modale ---------- */
+.fondModale { position: fixed; inset: 0; z-index: 3000; display: grid; place-items: center; padding: 16px; background: rgba(2, 6, 23, .6); backdrop-filter: blur(4px); animation: apparait .2s; }
+.modale { position: relative; width: min(560px, 100%); max-height: calc(100vh - 32px); overflow-y: auto; padding: 28px; border-radius: 24px; background: var(--surface); box-shadow: var(--ombre-forte); animation: monte .3s var(--courbe); }
+.modale h2 { font-size: 1.35rem; margin-bottom: 14px; padding-right: 40px; }
+.fermerModale { position: absolute; top: 14px; right: 14px; }
+@keyframes apparait { from { opacity: 0; } }
+@keyframes monte { from { opacity: 0; transform: translateY(20px) scale(.98); } }
+
+/* ---------- Notifications ---------- */
+.zoneNotifications { position: fixed; left: 50%; bottom: 24px; z-index: 5000; display: flex; flex-direction: column; gap: 10px; width: min(420px, calc(100% - 32px)); transform: translateX(-50%); }
+.notification { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: var(--encre); color: #fff; box-shadow: var(--ombre-forte); animation: monte .3s var(--courbe); }
+[data-theme='sombre'] .notification { background: #fff; color: var(--encre); }
+.notification svg { width: 20px; height: 20px; flex-shrink: 0; color: #4ADE80; }
+.notification.erreurNotif svg { color: #F87171; }
+.notification span { flex: 1; font-weight: 600; font-size: .92rem; }
+.notification button { padding: 6px 12px; border: none; border-radius: 999px; background: var(--jaune); color: var(--encre); font-weight: 700; cursor: pointer; }
+
+/* ---------- Pagination ---------- */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 32px; flex-wrap: wrap; }
+.pagination button { min-width: 42px; height: 42px; padding: 0 12px; border: 1.5px solid var(--bordure); border-radius: 12px; background: var(--surface); font-weight: 700; cursor: pointer; }
+.pagination button[aria-current='page'] { background: var(--orange); border-color: var(--orange); color: #fff; }
+.pagination button:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ---------- Quantité ---------- */
+.quantite { display: inline-flex; align-items: center; border: 1.5px solid var(--bordure); border-radius: 999px; background: var(--surface); }
+.quantite button { width: 38px; height: 38px; display: grid; place-items: center; border: none; border-radius: 50%; background: none; color: var(--orange); cursor: pointer; }
+.quantite button:hover:not(:disabled) { background: var(--orange-pale); }
+.quantite button:disabled { color: var(--bordure); cursor: not-allowed; }
+.quantite output { min-width: 28px; text-align: center; font-weight: 700; }

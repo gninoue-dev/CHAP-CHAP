@@ -1,0 +1,57 @@
+.fil { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; padding: 0; list-style: none; font-size: .88rem; color: var(--texte-doux); }
+.fil li + li::before { content: '›'; margin-right: 6px; }
+.fil a { text-decoration: none; }
+.fil a:hover { color: var(--orange); }
+.haut { display: grid; grid-template-columns: 1.05fr 1fr; gap: 36px; align-items: start; }
+.galerie { position: sticky; top: calc(var(--hauteur-entete) + 60px); }
+.imagePrincipale { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 24px; background: var(--surface); border: 1px solid var(--bordure); cursor: zoom-in; }
+.imagePrincipale img { width: 100%; height: 100%; object-fit: cover; transition: transform .15s ease-out; }
+.imagePrincipale.zoom img { transform: scale(1.9); }
+.vue3D { aspect-ratio: 1; border-radius: 24px; overflow: hidden; background: radial-gradient(circle at 50% 30%, var(--surface), var(--surface-2)); border: 1px solid var(--bordure); }
+.vignettes { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+.vignettes button { width: 72px; height: 72px; padding: 0; overflow: hidden; border: 2px solid var(--bordure); border-radius: 14px; background: var(--surface); cursor: pointer; }
+.vignettes button[aria-pressed='true'] { border-color: var(--orange); }
+.vignettes img { width: 100%; height: 100%; object-fit: cover; }
+.bouton3D { display: grid; place-items: center; font-weight: 800; font-size: .85rem; color: var(--orange); }
+.infos h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin: 8px 0 10px; }
+.vendeur { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none; color: var(--texte-doux); }
+.vendeur svg { color: var(--bleu); }
+.ligneNote { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; color: var(--texte-doux); font-size: .92rem; }
+.ligneNote a { color: var(--texte-doux); }
+.blocPrix { margin: 20px 0; padding: 18px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bordure); }
+.stock { display: flex; align-items: center; gap: 8px; margin: 10px 0 0; font-weight: 600; }
+.stock.ok { color: var(--vert); }
+.stock.faible { color: var(--orange-fonce); }
+.stock.epuise { color: var(--rouge); }
+.achat { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.achat > button:not(:first-child) { flex: 1; }
+.garanties { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 10px; }
+.garanties li { display: flex; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 14px; background: var(--surface-2); font-size: .92rem; }
+.garanties svg { color: var(--orange); flex-shrink: 0; }
+.onglets { margin-top: 48px; }
+.ongletsListe { display: flex; gap: 6px; border-bottom: 1px solid var(--bordure); margin-bottom: 22px; overflow-x: auto; }
+.ongletsListe button { padding: 12px 18px; border: none; border-bottom: 3px solid transparent; background: none; font-family: var(--police-titre); font-weight: 700; color: var(--texte-doux); cursor: pointer; white-space: nowrap; }
+.ongletsListe button[aria-selected='true'] { color: var(--texte); border-bottom-color: var(--orange); }
+.description { max-width: 760px; font-size: 1.02rem; white-space: pre-line; }
+.caracteristiques { width: 100%; max-width: 640px; border-collapse: collapse; }
+.caracteristiques th, .caracteristiques td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--bordure); }
+.caracteristiques th { width: 40%; color: var(--texte-doux); font-weight: 600; }
+.avisGrille { display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start; }
+.resumeAvis { padding: 22px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bordure); }
+.noteGrande { font-family: var(--police-titre); font-size: 3rem; font-weight: 800; line-height: 1; }
+.barres { list-style: none; margin: 16px 0; padding: 0; display: grid; gap: 6px; font-size: .88rem; }
+.barres li { display: grid; grid-template-columns: 54px 1fr 30px; gap: 8px; align-items: center; }
+.barre { height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.barre span { display: block; height: 100%; background: #F59E0B; border-radius: inherit; }
+.listeAvis { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.avis { padding: 18px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bordure); }
+.avisEntete { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.avisEntete strong { display: block; }
+.avisEntete small { color: var(--texte-doux); }
+.avis p { margin: 8px 0 0; }
+.formAvis { margin-top: 16px; }
+.section { margin-top: 48px; }
+@media (max-width: 900px) {
+  .haut, .avisGrille { grid-template-columns: 1fr; }
+  .galerie { position: static; }
+}

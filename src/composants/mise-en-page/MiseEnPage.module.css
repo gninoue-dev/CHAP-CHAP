@@ -1,0 +1,91 @@
+/* ---------- En-tête ---------- */
+.entete { position: sticky; top: 0; z-index: 1000; background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--bordure); }
+.barre { height: var(--hauteur-entete); display: flex; align-items: center; gap: 16px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.logoIcone { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: var(--orange); color: #fff; transform: rotate(-6deg); transition: transform .3s var(--courbe); }
+.logo:hover .logoIcone { transform: rotate(6deg) scale(1.06); }
+.logoTexte { font-family: var(--police-titre); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; }
+.logoTexte span { color: var(--orange); }
+
+.recherche { position: relative; flex: 1; max-width: 560px; margin-inline: auto; }
+.recherche form { display: flex; }
+.recherche input { flex: 1; min-width: 0; height: 46px; padding: 0 16px 0 44px; border: 1.5px solid var(--bordure); border-radius: 999px 0 0 999px; background: var(--surface-2); outline: none; }
+.recherche input:focus { border-color: var(--orange); background: var(--surface); }
+.recherche .loupe { position: absolute; left: 16px; top: 13px; color: var(--texte-doux); pointer-events: none; }
+.recherche button[type='submit'] { padding: 0 20px; border: none; border-radius: 0 999px 999px 0; background: var(--orange); color: #fff; font-weight: 700; cursor: pointer; }
+.suggestions { position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 10; margin: 0; padding: 6px; list-style: none; background: var(--surface); border: 1px solid var(--bordure); border-radius: 18px; box-shadow: var(--ombre-forte); }
+.suggestions li a { display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 12px; text-decoration: none; }
+.suggestions li a:hover, .suggestions li[aria-selected='true'] a { background: var(--surface-2); }
+.suggestions img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; }
+.suggestions strong { display: block; font-size: .92rem; }
+.suggestions small { color: var(--texte-doux); }
+.suggestionPrix { margin-left: auto; font-weight: 800; color: var(--orange); font-size: .9rem; white-space: nowrap; }
+.toutVoir { justify-content: center; font-weight: 700; color: var(--orange); }
+
+.actions { display: flex; align-items: center; gap: 6px; }
+.iconeBouton { position: relative; width: 44px; height: 44px; display: grid; place-items: center; border: none; border-radius: 50%; background: transparent; color: var(--texte); cursor: pointer; text-decoration: none; transition: background .2s; }
+.iconeBouton:hover { background: var(--surface-2); }
+.pastille { position: absolute; top: 2px; right: 0; min-width: 20px; height: 20px; padding: 0 5px; display: grid; place-items: center; border-radius: 999px; background: var(--orange); color: #fff; font-size: .72rem; font-weight: 800; border: 2px solid var(--surface); }
+.pastille.rebond { animation: rebond .5s var(--courbe); }
+@keyframes rebond { 40% { transform: scale(1.5); } }
+.avatar { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--encre); color: #fff; font-weight: 800; font-size: .8rem; }
+[data-theme='sombre'] .avatar { background: var(--orange); }
+
+.menuCompte { position: relative; }
+.listeCompte { position: absolute; right: 0; top: calc(100% + 8px); width: 240px; padding: 8px; margin: 0; list-style: none; background: var(--surface); border: 1px solid var(--bordure); border-radius: 18px; box-shadow: var(--ombre-forte); z-index: 20; }
+.listeCompte a, .listeCompte button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px 12px; border: none; border-radius: 10px; background: none; text-decoration: none; text-align: left; font-weight: 500; cursor: pointer; }
+.listeCompte a:hover, .listeCompte button:hover { background: var(--surface-2); }
+.listeCompteEntete { padding: 8px 12px 10px; border-bottom: 1px solid var(--bordure); margin-bottom: 6px; }
+.listeCompteEntete strong { display: block; }
+.listeCompteEntete small { color: var(--texte-doux); }
+
+.navCategories { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
+.navCategories a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 999px; font-size: .88rem; font-weight: 600; text-decoration: none; white-space: nowrap; color: var(--texte-doux); transition: background .2s, color .2s; }
+.navCategories a:hover { background: var(--surface-2); color: var(--texte); }
+.navCategories a[aria-current='page'] { background: var(--orange-pale); color: var(--orange-fonce); }
+[data-theme='sombre'] .navCategories a[aria-current='page'] { color: #FFB27A; }
+
+@media (max-width: 760px) {
+  .barre { flex-wrap: wrap; height: auto; padding-block: 10px; gap: 10px; }
+  .recherche { order: 3; flex-basis: 100%; max-width: none; }
+  .actions { margin-left: auto; }
+  .logoTexte { font-size: 1.1rem; }
+}
+
+/* ---------- Tiroir panier ---------- */
+.fondTiroir { position: fixed; inset: 0; z-index: 2500; background: rgba(2, 6, 23, .55); animation: fondu .25s; }
+.tiroir { position: fixed; top: 0; right: 0; bottom: 0; z-index: 2600; width: min(420px, 100%); display: flex; flex-direction: column; background: var(--surface); box-shadow: var(--ombre-forte); animation: glisse .35s var(--courbe); }
+@keyframes fondu { from { opacity: 0; } }
+@keyframes glisse { from { transform: translateX(100%); } }
+.tiroirEntete { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-bottom: 1px solid var(--bordure); }
+.tiroirEntete h2 { font-size: 1.2rem; }
+.tiroirLignes { flex: 1; overflow-y: auto; margin: 0; padding: 8px 20px; list-style: none; }
+.tiroirLigne { display: grid; grid-template-columns: 64px 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--bordure); }
+.tiroirLigne img { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; background: var(--surface-2); }
+.tiroirLigne a { font-weight: 600; text-decoration: none; font-size: .92rem; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.tiroirLigne small { color: var(--texte-doux); display: block; }
+.tiroirLigne .montant { font-weight: 800; color: var(--orange); }
+.tiroirPied { padding: 16px 20px 22px; border-top: 1px solid var(--bordure); display: flex; flex-direction: column; gap: 10px; }
+.jauge { height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.jauge span { display: block; height: 100%; background: var(--vert); border-radius: inherit; transition: width .5s var(--courbe); }
+.ligneTotal { display: flex; justify-content: space-between; font-size: 1.05rem; }
+.ligneTotal strong { font-family: var(--police-titre); }
+
+/* ---------- Pied de page ---------- */
+.pied { margin-top: 40px; background: var(--encre); color: #CBD5E1; }
+.piedGrille { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; padding-block: 52px 32px; }
+.pied h2 { color: #fff; font-size: 1rem; margin-bottom: 14px; }
+.pied ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.pied a { color: #CBD5E1; text-decoration: none; }
+.pied a:hover { color: var(--orange); }
+.piedMarque p { max-width: 300px; }
+.piedPaiements { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.piedPaiements span { padding: 4px 10px; border-radius: 8px; background: #1E293B; font-size: .78rem; font-weight: 700; }
+.piedBas { padding-block: 18px; border-top: 1px solid #1E293B; text-align: center; font-size: .85rem; color: #94A3B8; }
+.atouts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-block: 28px; border-bottom: 1px solid #1E293B; }
+.atout { display: flex; gap: 12px; align-items: center; }
+.atout svg { color: var(--orange); flex-shrink: 0; }
+.atout strong { display: block; color: #fff; font-size: .95rem; }
+.atout small { color: #94A3B8; }
+@media (max-width: 900px) { .piedGrille { grid-template-columns: 1fr 1fr; } .atouts { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .piedGrille, .atouts { grid-template-columns: 1fr; } }

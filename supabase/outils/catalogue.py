@@ -1,0 +1,96 @@
+# Catalogue de démonstration CHAP CHAP : (clé image, recherche Commons, nom, prix, prix barré, stock, description, caractéristiques)
+CATEGORIES = [
+  ('telephones', 'Téléphones & tablettes', 'smartphone', '#2563EB'),
+  ('informatique', 'Informatique', 'laptop', '#7C3AED'),
+  ('mode-femme', 'Mode femme', 'shirt', '#DB2777'),
+  ('mode-homme', 'Mode homme', 'shirt', '#0F766E'),
+  ('maison', 'Maison & cuisine', 'home', '#EA580C'),
+  ('beaute', 'Beauté & santé', 'sparkles', '#C026D3'),
+  ('sport', 'Sport & loisirs', 'dumbbell', '#16A34A'),
+  ('epicerie', 'Épicerie ivoirienne', 'shopping-basket', '#B45309'),
+]
+
+BOUTIQUES = [
+  ('techno', 'TechnoPlus Abidjan', 'Smartphones, ordinateurs et accessoires, garantis et testés avant livraison.', 'Abidjan - Plateau', '#2563EB'),
+  ('wax', 'Wax & Style', 'Mode africaine et prêt-à-porter, tissus wax sélectionnés à Treichville.', 'Abidjan - Treichville', '#DB2777'),
+  ('maison', 'Maison Akwaba', 'Tout pour la maison et la cuisine, du petit électroménager à la déco.', 'Abidjan - Cocody', '#EA580C'),
+  ('beaute', 'Nature & Beauté CI', 'Cosmétiques naturels au karité, au cacao et à la noix de coco.', 'Bouaké', '#C026D3'),
+  ('sport', 'Sport Zone', 'Équipements de sport, maillots et loisirs pour toute la famille.', 'Abidjan - Marcory', '#16A34A'),
+  ('saveurs', 'Saveurs du Pays', 'Épicerie ivoirienne : attiéké, cacao, café, épices et produits du terroir.', 'Yamoussoukro', '#B45309'),
+]
+
+# boutique, catégorie, clé image, recherche Commons, nom, prix, prix barré, stock, description, caractéristiques
+PRODUITS = [
+  # Téléphones
+  ('techno','telephones','smartphone-1','smartphone black front','Smartphone Android 6,5" 128 Go',89000,105000,24,'Grand écran 6,5 pouces, 128 Go de stockage, double SIM et batterie 5000 mAh pour tenir toute la journée.',{'Écran':'6,5" HD+','Stockage':'128 Go','RAM':'4 Go','Batterie':'5000 mAh','Double SIM':'Oui'}),
+  ('techno','telephones','smartphone-2','smartphone camera back','Smartphone photo 256 Go triple capteur',165000,189000,12,'Triple capteur photo 50 Mpx, charge rapide 33 W et écran AMOLED lumineux.',{'Écran':'6,7" AMOLED','Stockage':'256 Go','RAM':'8 Go','Photo':'50 Mpx'}),
+  ('techno','telephones','tablette','tablet computer','Tablette 10" pour la famille',75000,None,18,'Tablette 10 pouces idéale pour les cours, les films et les appels vidéo.',{'Écran':'10,1"','Stockage':'64 Go','Wi-Fi':'Oui'}),
+  ('techno','telephones','telephone-simple','feature phone','Téléphone simple longue autonomie',12500,15000,60,'Téléphone robuste avec lampe torche, radio FM et autonomie de plusieurs jours.',{'Autonomie':'7 jours','Double SIM':'Oui','Radio':'FM'}),
+  ('techno','telephones','ecouteurs','wireless earbuds','Écouteurs sans fil Bluetooth',15000,22000,45,'Écouteurs Bluetooth 5.3 avec boîtier de charge et micro intégré.',{'Bluetooth':'5.3','Autonomie':'24 h avec boîtier'}),
+  ('techno','telephones','powerbank','power bank','Batterie externe 20 000 mAh',14000,None,70,'Recharge ton téléphone 4 fois. Indispensable pendant les coupures.',{'Capacité':'20 000 mAh','Ports':'2 USB + USB-C'}),
+  ('techno','telephones','montre','smartwatch','Montre connectée sport',25000,32000,30,'Suivi du sommeil, du rythme cardiaque et des pas, notifications du téléphone.',{'Étanchéité':'IP68','Autonomie':'10 jours'}),
+  ('techno','telephones','chargeur','usb charger','Chargeur rapide USB-C 25 W',6500,None,120,'Charge rapide compatible avec la plupart des smartphones récents.',{'Puissance':'25 W','Connecteur':'USB-C'}),
+  # Informatique
+  ('techno','informatique','laptop-1','laptop computer open','Ordinateur portable 15,6" Core i5',385000,420000,8,'Processeur Core i5, 8 Go de RAM et SSD 512 Go : parfait pour les études et le travail.',{'Processeur':'Core i5','RAM':'8 Go','Stockage':'SSD 512 Go','Écran':'15,6" Full HD'}),
+  ('techno','informatique','laptop-2','ultrabook','Ultrabook léger 14"',520000,None,5,'Moins de 1,3 kg, autonomie de 12 heures et écran 14 pouces.',{'Poids':'1,3 kg','RAM':'16 Go','Stockage':'SSD 512 Go'}),
+  ('techno','informatique','clavier','computer keyboard','Clavier mécanique rétroéclairé',28000,35000,25,'Clavier AZERTY mécanique avec rétroéclairage RGB.',{'Disposition':'AZERTY','Rétroéclairage':'RGB'}),
+  ('techno','informatique','souris','computer mouse','Souris sans fil silencieuse',7500,None,80,'Souris ergonomique sans fil, clics silencieux.',{'Connexion':'2,4 GHz','Autonomie':'12 mois'}),
+  ('techno','informatique','ecran','computer monitor','Écran 24" Full HD',95000,110000,10,'Écran IPS 24 pouces, bords fins, idéal pour le télétravail.',{'Taille':'24"','Dalle':'IPS','Résolution':'1920 × 1080'}),
+  ('techno','informatique','imprimante','inkjet printer','Imprimante multifonction Wi-Fi',62000,None,9,'Imprime, scanne et copie depuis ton téléphone grâce au Wi-Fi.',{'Fonctions':'Impression, scan, copie','Wi-Fi':'Oui'}),
+  ('techno','informatique','disque','external hard drive','Disque dur externe 1 To',38000,45000,22,'Sauvegarde tes photos et documents, format compact USB 3.0.',{'Capacité':'1 To','Interface':'USB 3.0'}),
+  ('techno','informatique','manette','game controller','Manette de jeu sans fil',18000,None,35,'Manette compatible PC et Android, vibrations et Bluetooth.',{'Compatibilité':'PC, Android','Connexion':'Bluetooth'}),
+  # Mode femme
+  ('wax','mode-femme','robe-wax','wax print dress','Robe longue en wax',18500,25000,20,'Robe longue cousue main dans un wax 100 % coton, coupe évasée.',{'Matière':'Coton wax','Tailles':'S à XXL'}),
+  ('wax','mode-femme','pagne','african wax print fabric','Pagne wax 6 yards',15000,None,40,'Pagne wax de qualité supérieure, 6 yards, motifs vifs.',{'Longueur':'6 yards','Matière':'100 % coton'}),
+  ('wax','mode-femme','sac-femme','handbag leather','Sac à main en cuir',22000,28000,15,'Sac à main en cuir avec bandoulière amovible.',{'Matière':'Cuir','Fermeture':'Zip'}),
+  ('wax','mode-femme','sandales','women sandals','Sandales tressées',9500,None,30,'Sandales tressées confortables pour l\'été.',{'Pointures':'36 à 41'}),
+  ('wax','mode-femme','foulard','headscarf african','Foulard de tête',4500,6000,55,'Foulard imprimé pour attacher les cheveux avec style.',{'Dimensions':'180 × 70 cm'}),
+  ('wax','mode-femme','boucles','earrings','Boucles d\'oreilles dorées',5500,None,60,'Créoles dorées légères et hypoallergéniques.',{'Matière':'Acier doré'}),
+  ('wax','mode-femme','perles','waist beads','Perles de hanche artisanales',3000,None,90,'Perles de hanche colorées, faites à la main.',{'Fabrication':'Artisanale'}),
+  ('wax','mode-femme','ensemble','african print outfit','Ensemble pagne deux pièces',26000,32000,12,'Haut et jupe assortis en wax, parfait pour les cérémonies.',{'Pièces':'2','Tailles':'S à XL'}),
+  # Mode homme
+  ('wax','mode-homme','chemise-wax','african print shirt','Chemise en wax manches courtes',14500,18000,28,'Chemise légère en wax, coupe ajustée.',{'Matière':'Coton wax','Tailles':'M à 3XL'}),
+  ('wax','mode-homme','boubou','grand boubou','Boubou brodé',35000,42000,10,'Boubou en bazin brodé, pour les grandes occasions.',{'Matière':'Bazin riche','Taille':'Unique'}),
+  ('wax','mode-homme','baskets','sneakers white','Baskets blanches',24000,None,25,'Baskets blanches tendance, semelle confortable.',{'Pointures':'39 à 46'}),
+  ('wax','mode-homme','montre-homme','wristwatch analog','Montre analogique homme',19500,26000,18,'Montre classique, bracelet en cuir.',{'Bracelet':'Cuir','Étanchéité':'3 ATM'}),
+  ('wax','mode-homme','casquette','baseball cap','Casquette brodée',5000,None,70,'Casquette ajustable avec broderie.',{'Taille':'Ajustable'}),
+  ('wax','mode-homme','jean','jeans denim','Jean coupe droite',16000,20000,35,'Jean confortable coupe droite, toile résistante.',{'Tailles':'38 à 48'}),
+  ('wax','mode-homme','lunettes','sunglasses','Lunettes de soleil',7000,None,50,'Lunettes de soleil avec protection UV400.',{'Protection':'UV400'}),
+  ('wax','mode-homme','sac-dos','backpack','Sac à dos ordinateur',17500,22000,26,'Sac à dos avec compartiment pour ordinateur 15,6" et port USB.',{'Volume':'25 L','Compartiment PC':'15,6"'}),
+  # Maison
+  ('maison','maison','blender','blender kitchen','Blender 1,5 L',24000,30000,20,'Blender puissant pour jus, smoothies et sauces.',{'Puissance':'600 W','Capacité':'1,5 L'}),
+  ('maison','maison','marmite','cooking pot','Marmite en fonte',27000,None,14,'Marmite en fonte pour mijoter sauces et ragoûts.',{'Capacité':'6 L'}),
+  ('maison','maison','ventilateur','electric fan','Ventilateur sur pied',21000,26000,30,'Ventilateur silencieux à 3 vitesses avec oscillation.',{'Vitesses':'3','Hauteur':'1,2 m'}),
+  ('maison','maison','fer','clothes iron','Fer à repasser vapeur',13500,None,25,'Fer vapeur avec semelle anti-adhésive.',{'Puissance':'2000 W'}),
+  ('maison','maison','bouilloire','electric kettle','Bouilloire électrique 1,7 L',11000,14000,32,'Bouilloire inox avec arrêt automatique.',{'Capacité':'1,7 L'}),
+  ('maison','maison','lampe','table lamp','Lampe de chevet',9000,None,40,'Lampe de chevet design avec abat-jour en tissu.',{'Ampoule':'E27'}),
+  ('maison','maison','assiettes','dinnerware set','Service de 12 assiettes',18000,23000,16,'Service en porcelaine pour 6 personnes.',{'Pièces':'12'}),
+  ('maison','maison','panier-tresse','woven basket','Panier tressé artisanal',8000,None,24,'Panier tressé à la main, idéal pour le rangement ou la décoration.',{'Fabrication':'Artisanale'}),
+  # Beauté
+  ('beaute','beaute','karite','shea butter','Beurre de karité pur 250 g',4500,None,100,'Beurre de karité brut, non raffiné, pour la peau et les cheveux.',{'Poids':'250 g','Origine':'Nord de la Côte d\'Ivoire'}),
+  ('beaute','beaute','savon-noir','african black soap','Savon noir naturel',2500,3500,150,'Savon noir traditionnel pour un nettoyage en douceur.',{'Poids':'200 g'}),
+  ('beaute','beaute','huile-coco','coconut oil jar','Huile de coco vierge',5000,None,80,'Huile de coco pressée à froid, multi-usage.',{'Volume':'500 ml'}),
+  ('beaute','beaute','parfum','perfume bottle','Parfum 100 ml',28000,35000,20,'Eau de parfum aux notes boisées et fruitées.',{'Volume':'100 ml'}),
+  ('beaute','beaute','rouge-levres','lipstick','Rouge à lèvres longue tenue',6000,None,60,'Rouge à lèvres mat longue tenue.',{'Fini':'Mat'}),
+  ('beaute','beaute','vernis','nail polish','Coffret vernis à ongles',7500,9500,35,'Coffret de 6 vernis aux couleurs tendance.',{'Flacons':'6'}),
+  ('beaute','beaute','peigne','afro comb','Peigne afro en bois',2000,None,120,'Peigne afro en bois, dents larges.',{'Matière':'Bois'}),
+  ('beaute','beaute','cacao-beurre','cocoa butter','Beurre de cacao',4000,None,90,'Beurre de cacao ivoirien pour une peau nourrie.',{'Poids':'200 g'}),
+  # Sport
+  ('sport','sport','ballon','football ball','Ballon de football',12000,15000,50,'Ballon taille 5, cousu, pour terrain et maquis du quartier.',{'Taille':'5'}),
+  ('sport','sport','maillot','football jersey orange','Maillot de football orange',15000,None,40,'Maillot respirant aux couleurs orange, idéal pour supporter.',{'Tailles':'S à XXL'}),
+  ('sport','sport','halteres','dumbbells','Paire d\'haltères 2 × 5 kg',19000,24000,22,'Haltères en fonte avec revêtement néoprène.',{'Poids':'2 × 5 kg'}),
+  ('sport','sport','tapis-yoga','yoga mat','Tapis de yoga',9500,None,35,'Tapis antidérapant 6 mm pour yoga et fitness.',{'Épaisseur':'6 mm'}),
+  ('sport','sport','velo','bicycle','Vélo VTT 26"',145000,170000,6,'VTT 21 vitesses, cadre acier, freins à disque.',{'Roues':'26"','Vitesses':'21'}),
+  ('sport','sport','corde','jump rope','Corde à sauter',3500,None,80,'Corde à sauter ajustable avec poignées ergonomiques.',{'Longueur':'Ajustable'}),
+  ('sport','sport','gourde','water bottle sport','Gourde isotherme 750 ml',7000,9000,60,'Garde l\'eau fraîche 24 heures.',{'Volume':'750 ml'}),
+  ('sport','sport','awale','oware board game','Jeu d\'awalé en bois',11000,None,15,'Le jeu traditionnel d\'awalé, plateau en bois sculpté.',{'Matière':'Bois'}),
+  # Épicerie
+  ('saveurs','epicerie','attieke','attiéké','Attiéké séché 1 kg',2500,None,200,'Attiéké de qualité, séché pour une longue conservation.',{'Poids':'1 kg'}),
+  ('saveurs','epicerie','cafe','coffee beans','Café robusta torréfié 500 g',6500,8000,70,'Café robusta de Côte d\'Ivoire, torréfaction artisanale.',{'Poids':'500 g','Origine':'Côte d\'Ivoire'}),
+  ('saveurs','epicerie','cacao','cocoa beans','Fèves de cacao 500 g',5000,None,60,'Fèves de cacao fermentées et séchées.',{'Poids':'500 g'}),
+  ('saveurs','epicerie','chocolat','dark chocolate bar','Chocolat noir 70 % ivoirien',3500,None,110,'Tablette de chocolat noir fabriquée avec du cacao ivoirien.',{'Cacao':'70 %','Poids':'100 g'}),
+  ('saveurs','epicerie','piment','dried chili peppers','Piment séché moulu',1500,None,150,'Piment moulu pour relever toutes les sauces.',{'Poids':'200 g'}),
+  ('saveurs','epicerie','huile-palme','red palm oil','Huile de palme rouge 1 L',3000,3800,80,'Huile de palme rouge pour la sauce graine et le kedjenou.',{'Volume':'1 L'}),
+  ('saveurs','epicerie','gingembre','ginger root','Gingembre frais 1 kg',2000,None,90,'Gingembre frais pour jus et cuisine.',{'Poids':'1 kg'}),
+  ('saveurs','epicerie','bissap','hibiscus dried flowers','Fleurs de bissap séchées',2500,None,100,'Fleurs d\'hibiscus pour préparer le bissap maison.',{'Poids':'500 g'}),
+]

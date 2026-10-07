@@ -1,0 +1,58 @@
+.espace { display: grid; grid-template-columns: 250px 1fr; gap: 28px; align-items: start; }
+.espace > * { min-width: 0; }
+.menu { position: sticky; top: calc(var(--hauteur-entete) + 60px); padding: 14px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bordure); }
+.menuEntete { display: flex; gap: 12px; align-items: center; padding: 6px 6px 14px; margin-bottom: 8px; border-bottom: 1px solid var(--bordure); }
+.menuEntete span:first-child { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; background: var(--accent, var(--orange)); color: #fff; font-family: var(--police-titre); font-weight: 800; flex-shrink: 0; }
+.menuEntete strong { display: block; line-height: 1.2; }
+.menuEntete small { color: var(--texte-doux); }
+.menu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.menu a { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; text-decoration: none; font-weight: 500; color: var(--texte-doux); }
+.menu a:hover { background: var(--surface-2); color: var(--texte); }
+.menu a[aria-current='page'] { background: var(--orange-pale); color: var(--orange-fonce); font-weight: 700; }
+[data-theme='sombre'] .menu a[aria-current='page'] { color: #FFB27A; }
+.contenu h1 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 20px; }
+.enteteContenu { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.enteteContenu h1 { margin: 0; }
+@media (max-width: 900px) {
+  .espace { grid-template-columns: 1fr; }
+  .menu { position: static; }
+  .menu ul { display: flex; overflow-x: auto; }
+  .menu a { white-space: nowrap; }
+  .menuEntete { display: none; }
+}
+
+/* Cartes de statistiques et graphiques */
+.stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; margin-bottom: 20px; }
+.stat { padding: 18px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bordure); }
+.stat svg { color: var(--orange); }
+.stat p { margin: 10px 0 2px; color: var(--texte-doux); font-size: .88rem; }
+.stat strong { font-family: var(--police-titre); font-size: 1.6rem; font-weight: 800; }
+.bloc { padding: 20px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bordure); margin-bottom: 20px; }
+.bloc h2 { font-size: 1.1rem; margin-bottom: 14px; }
+.deuxBlocs { display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; }
+@media (max-width: 1000px) { .deuxBlocs { grid-template-columns: 1fr; } }
+
+/* Tableaux */
+.tableauDefilant { overflow-x: auto; border-radius: var(--rayon); border: 1px solid var(--bordure); background: var(--surface); }
+.tableau { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.tableau th, .tableau td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--bordure); vertical-align: middle; }
+.tableau th { background: var(--surface-2); font-family: var(--police-titre); font-size: .85rem; white-space: nowrap; }
+.tableau tr:last-child td { border-bottom: none; }
+.tableau img { width: 48px; height: 48px; border-radius: 10px; object-fit: cover; }
+.tableau select { height: 36px; padding: 0 10px; border: 1.5px solid var(--bordure); border-radius: 10px; background: var(--surface); }
+.cellProduit { display: flex; align-items: center; gap: 12px; min-width: 220px; }
+.cellProduit a { font-weight: 600; text-decoration: none; }
+.actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.filtresTableau { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.filtresTableau input, .filtresTableau select { height: 42px; padding: 0 14px; border: 1.5px solid var(--bordure); border-radius: 999px; background: var(--surface); }
+.filtresTableau input { flex: 1; min-width: 200px; }
+
+/* Commandes du client */
+.commandes { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.commande { padding: 18px; border-radius: var(--rayon); background: var(--surface); border: 1px solid var(--bordure); }
+.commandeEntete { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: center; }
+.commandeEntete strong { font-family: var(--police-titre); }
+.commandeEntete small { display: block; color: var(--texte-doux); }
+.vignettes { display: flex; gap: 8px; margin: 14px 0; flex-wrap: wrap; }
+.vignettes img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; }
+.commandePied { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 12px; border-top: 1px dashed var(--bordure); }
