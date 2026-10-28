@@ -48,3 +48,15 @@
 .banniereVendeur ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
 .banniereVendeur li { display: flex; gap: 10px; align-items: center; font-weight: 600; }
 @media (max-width: 760px) { .banniereVendeur { grid-template-columns: 1fr; padding: 28px; } }
+
+/* Les sections apparaissent au fil du défilement (animations liées au scroll,
+   navigateurs récents ; ailleurs elles sont simplement affichées) */
+@supports (animation-timeline: view()) {
+  .section { animation: sectionApparait linear backwards; animation-timeline: view(); animation-range: entry 0% entry 70%; }
+  .categories > * { animation: sectionApparait linear backwards; animation-timeline: view(); animation-range: entry 10% entry 90%; }
+}
+@keyframes sectionApparait { from { opacity: 0; transform: translateY(48px); } }
+@media (prefers-reduced-motion: reduce) {
+  .section, .categories > * { animation: none; }
+}
+

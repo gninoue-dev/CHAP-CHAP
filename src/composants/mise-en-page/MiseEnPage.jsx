@@ -22,7 +22,10 @@ export default function MiseEnPage() {
       <main id="contenu" tabIndex={-1}>
         <FrontiereErreur key={pathname}>
           <Suspense fallback={<ChargementPage />}>
-            <Outlet context={{ ouvrirPanier }} />
+            {/* la clé relance l'animation d'entrée à chaque changement de page */}
+            <div key={pathname} className="entree-page">
+              <Outlet context={{ ouvrirPanier }} />
+            </div>
           </Suspense>
         </FrontiereErreur>
       </main>
